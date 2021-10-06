@@ -15,7 +15,7 @@ const initialState: PostsState = {
 
 
 export const getPostsAsync = createAsyncThunk(
-  'blog/axiosPosts',
+  'blog/axiosGetPosts',
   async () => {
     const response = await axiosPosts()
 
@@ -24,7 +24,7 @@ export const getPostsAsync = createAsyncThunk(
 )
 
 export const createPostAsync = createAsyncThunk(
-  'blog/axiosPosts',
+  'blog/axiosCreatePost',
   async (val: {title: string, body: string}) => {
     const response = await axiosCreatePost(val)
 
