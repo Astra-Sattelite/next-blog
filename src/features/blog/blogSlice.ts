@@ -1,6 +1,6 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import type { AppState } from '../../app/store'
-import { axiosPosts, axiosCreatePost } from './blogAPI'
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
+import type { AppState } from "../../app/store"
+import { axiosPosts } from "./blogAPI"
 import { Post } from "./blogAPI"
 import * as R from "ramda"
 
@@ -8,19 +8,19 @@ export interface PostsState {
   posts: Post[]
   postTitle: string
   postBody: string
-  status: 'idle' | 'loading' | 'failed'
+  status: "idle" | "loading" | "failed"
 }
 
 const initialState: PostsState = {
   posts: [],
   postTitle: "",
   postBody: "",
-  status: 'idle',
+  status: "idle",
 }
 
 
 export const getPostsAsync = createAsyncThunk(
-  'blog/axiosGetPosts',
+  "blog/axiosGetPosts",
   async () => {
     const response = await axiosPosts()
 
@@ -33,7 +33,7 @@ export const selectPosts = (state: AppState) => state.blog.posts
 
 
 export const blogSlice = createSlice({
-  name: 'blog',
+  name: "blog",
   initialState,
   reducers: {
     changeTitle: (state, action: PayloadAction<string>) => {
@@ -46,10 +46,10 @@ export const blogSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getPostsAsync.pending, (state) => {
-        state.status = 'loading'
+        state.status = "loading"
       })
       .addCase(getPostsAsync.fulfilled, (state, action) => {
-        state.status = 'idle'
+        state.status = "idle"
         state.posts = action.payload
       })
   },

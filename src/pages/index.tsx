@@ -1,5 +1,5 @@
-import type { NextPage } from 'next'
-
+import type { NextPage } from "next"
+import React from "react"
 import Blog from "../features/blog/Blog"
 
 const IndexPage: NextPage = () => {

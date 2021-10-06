@@ -1,19 +1,19 @@
 import { useRouter } from "next/router"
 import * as Styled from "../../../styles/Blog"
-import { useAppSelector, useAppDispatch } from '../../../app/hooks'
-import { getPostsAsync, selectPosts } from '../../../features/blog/blogSlice'
+import { useAppSelector, useAppDispatch } from "../../../app/hooks"
+import { getPostsAsync, selectPosts } from "../../../features/blog/blogSlice"
 import Link from "next/link"
 import * as R from "ramda"
-import { useEffect } from 'react'
+import React, { useEffect } from "react"
 
 const BigPost = () => {
   const router = useRouter()
 
-  const {id} = router.query
+  const { id } = router.query
 
   const dispatch = useAppDispatch()
 
-  useEffect(() => {dispatch(getPostsAsync())}, [])
+  useEffect(() => { dispatch(getPostsAsync()) }, [])
 
   const posts = useAppSelector(selectPosts)
 

@@ -7,13 +7,13 @@ export interface Post {
 }
 
 export async function axiosPosts(): Promise<{ data: Post[] }> {
-  const {data} = await axios.get('/api/blogGetPosts')
+  const { data } = await axios.get("/api/blogGetPosts")
 
   return data
 }
 
-export async function axiosCreatePost(val: {title: string, body: string}) {
-  await axios.post('/api/blogCreatePost', val)
+export async function axiosCreatePost(val: { title: string, body: string }) {
+  await axios.post("/api/blogCreatePost", val)
     .then(function (responce) {
       console.log(responce)
     })

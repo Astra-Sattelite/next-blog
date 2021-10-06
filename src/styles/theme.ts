@@ -1,5 +1,5 @@
 const defaultTheme = {
-  white: '#ffff'
+  white: "#ffff"
 }
 
 export type ThemeType = typeof defaultTheme

@@ -1,12 +1,9 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
-
-import counterReducer from '../features/counter/counterSlice'
-import blogReducer from '../features/blog/blogSlice'
+import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit"
+import blogReducer from "../features/blog/blogSlice"
 
 export function makeStore() {
   return configureStore({
-    reducer: { 
-      counter: counterReducer,
+    reducer: {
       blog: blogReducer
     },
   })

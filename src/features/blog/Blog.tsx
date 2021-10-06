@@ -1,8 +1,8 @@
-import { useAppSelector, useAppDispatch } from '../../app/hooks'
-import { getPostsAsync, selectPosts } from './blogSlice'
+import { useAppSelector, useAppDispatch } from "../../app/hooks"
+import { getPostsAsync, selectPosts } from "./blogSlice"
 import Link from "next/link"
 import * as Styled from "../../styles/Blog"
-import { useEffect } from 'react'
+import React, { useEffect } from "react"
 
 const Blog = () => {
 
