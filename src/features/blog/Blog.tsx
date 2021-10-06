@@ -12,7 +12,7 @@ function Blog() {
     <div>
       <button onClick={() => dispatch(getPostsAsync())}>Get Posts</button>
       {posts.map(x =>
-      <div key={x.id}>{x.title}</div>
+        <div key={x.id}>{x.title}</div>
       )}
     </div>
   )
