@@ -4,14 +4,9 @@ import axios from "axios"
 
 const blogHandler: NextApiHandler = async (request, response) => {
 
-  const resp = await axios.get("https://simple-blog-api.crew.red/posts")
+  const {data} = await axios.get("https://simple-blog-api.crew.red/posts")
 
-  // request.body
-  console.log("HANDLER: " + resp)
-  // simulate IO latency
-  await new Promise((resolve) => setTimeout(resolve, 500))
-
-  response.json({data: resp})
+  response.json({data})
 }
 
 export default blogHandler
