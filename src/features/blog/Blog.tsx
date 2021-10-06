@@ -3,14 +3,15 @@ import { getPostsAsync, selectPosts } from './blogSlice'
 
 function Blog() {
   const dispatch = useAppDispatch()
-  const posts = useAppSelector(selectPosts)
+  const getPosts = useAppSelector(selectPosts)
+  console.log(getPosts)
+
+  // const posts
 
   return (
     <div>
       <button onClick={() => dispatch(getPostsAsync())}>Get Posts</button>
-      {posts.map(x => 
-        <div key={x.id}>{x.title}</div>
-      )}
+      {/* {posts} */}
     </div>
   )
 }

@@ -3,7 +3,7 @@ import type { NextApiHandler } from 'next'
 
 const blogHandler: NextApiHandler = async (request, response) => {
   const {data} = request.body
-
+  console.log("HANDLER: " + data)
   // simulate IO latency
   await new Promise((resolve) => setTimeout(resolve, 500))
 
