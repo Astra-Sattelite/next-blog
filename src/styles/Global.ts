@@ -1,8 +1,8 @@
-import { ThemeType } from "./theme"
+import { ThemeType } from "./theme";
 import { createGlobalStyle } from "styled-components";
 
 interface Props {
-  theme: ThemeType
+  theme: ThemeType;
 }
 
 const GlobalStyle = createGlobalStyle<Props>`
@@ -193,6 +193,6 @@ const GlobalStyle = createGlobalStyle<Props>`
     -webkit-appearance: button;
     font: inherit;
   }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;

@@ -1,9 +1,9 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
 export const Post = styled.div`
   align-self: center;
@@ -16,7 +16,7 @@ export const Post = styled.div`
   border: 1px solid black;
   border-radius: 10px;
   margin: 10px;
-`
+`;
 export const Title = styled.div`
   display: flex;
   justify-content: center;
@@ -27,7 +27,7 @@ export const Title = styled.div`
   font-size: 1.3rem;
   border-bottom: 1px solid black;
   overflow: scroll;
-`
+`;
 
 export const Body = styled.div`
   justify-self: center;
@@ -37,7 +37,7 @@ export const Body = styled.div`
   height: 250px;
   font-size: 1rem;
   overflow: hidden;
-`
+`;
 
 export const PostBig = styled.div`
   align-self: center;
@@ -52,7 +52,7 @@ export const PostBig = styled.div`
   border: 1px solid black;
   border-radius: 10px;
   margin: 10px;
-`
+`;
 
 export const TitleBig = styled.div`
   display: flex;
@@ -64,7 +64,7 @@ export const TitleBig = styled.div`
   font-size: 1.3rem;
   border-bottom: 1px solid black;
   overflow: scroll;
-`
+`;
 
 export const BodyBig = styled.div`
   justify-self: center;
@@ -74,4 +74,4 @@ export const BodyBig = styled.div`
   height: 250px;
   font-size: 1rem;
   overflow: hidden;
-`
+`;
