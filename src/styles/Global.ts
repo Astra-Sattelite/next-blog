@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle<Props>`
 
   body {
     margin: 0;
+    height: 100vh;
   }
 
   article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
