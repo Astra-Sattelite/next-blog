@@ -12,7 +12,7 @@ export async function axiosPosts(): Promise<{ data: Post[] }> {
   return data
 }
 
-export async function axiosCreatePost(val: {title: string, body: string}): Promise<{ data: Post[] }> {
+export async function axiosCreatePost(val: {title: string, body: string}) {
   await axios.post('/api/blogCreatePost', val)
     .then(function (responce) {
       console.log(responce)
@@ -20,6 +20,4 @@ export async function axiosCreatePost(val: {title: string, body: string}): Promi
     .catch(function (error) {
       console.log(error)
     })
-  
-  return axiosPosts()
 }
