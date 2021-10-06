@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import type { AppState, AppThunk } from '../../app/store'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import type { AppState } from '../../app/store'
 import { axiosPosts } from './blogAPI'
 import { Post } from "./blogAPI"
 

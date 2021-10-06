@@ -8,7 +8,7 @@ export interface Post {
 }
 
 export async function axiosPosts(): Promise<{ data: Post[] }> {
-  const response = await axios.get('/api/blog')
+  const {data} = await axios.get('/api/blog')
 
-  return response
+  return data
 }

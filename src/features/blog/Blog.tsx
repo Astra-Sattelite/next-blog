@@ -1,15 +1,14 @@
 import { useAppSelector, useAppDispatch } from '../../app/hooks'
 import { getPostsAsync, selectPosts } from './blogSlice'
 
-function Blog() {
+const Blog = () => {
+
   const dispatch = useAppDispatch()
   const posts = useAppSelector(selectPosts)
-  // console.log(getPosts)
-
-  // const posts
 
   return (
     <div>
+      <button>Create Post</button>
       <button onClick={() => dispatch(getPostsAsync())}>Get Posts</button>
       {posts.map(x =>
         <div key={x.id}>{x.title}</div>
