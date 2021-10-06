@@ -1,4 +1,3 @@
-// const res = await axios.get("https://simple-blog-api.crew.red/posts")
 import axios from "axios"
 
 export interface Post {
@@ -11,4 +10,16 @@ export async function axiosPosts(): Promise<{ data: Post[] }> {
   const {data} = await axios.get('/api/blog')
 
   return data
+}
+
+export async function axiosCreatePost(val: {title: string, body: string}): Promise<{ data: Post[] }> {
+  await axios.post('/api/blog', val)
+    .then(function (responce) {
+      console.log(responce)
+    })
+    .catch(function (error) {
+      console.log(error)
+    })
+  
+  return axiosPosts()
 }

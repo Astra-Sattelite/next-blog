@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import type { AppState } from '../../app/store'
-import { axiosPosts } from './blogAPI'
+import { axiosPosts, axiosCreatePost } from './blogAPI'
 import { Post } from "./blogAPI"
 
 export interface PostsState {
@@ -23,6 +23,15 @@ export const getPostsAsync = createAsyncThunk(
   }
 )
 
+export const createPostAsync = createAsyncThunk(
+  'blog/axiosPosts',
+  async (val: {title: string, body: string}) => {
+    const response = await axiosCreatePost(val)
+
+    return response.data
+  }
+)
+
 export const selectPosts = (state: AppState) => state.blog.posts
 
 export const blogSlice = createSlice({
@@ -36,6 +45,13 @@ export const blogSlice = createSlice({
         state.status = 'loading'
       })
       .addCase(getPostsAsync.fulfilled, (state, action) => {
+        state.status = 'idle'
+        state.posts = action.payload
+      })
+      .addCase(createPostAsync.pending, (state) => {
+        state.status = 'loading'
+      })
+      .addCase(createPostAsync.fulfilled, (state, action) => {
         state.status = 'idle'
         state.posts = action.payload
       })
